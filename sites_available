@@ -1,0 +1,27 @@
+server {
+    root  /home/pi/project251;
+
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:/tmp/251.sock;
+    }
+
+    location /ws {
+        proxy_pass http://unix:/tmp/251_ws.sock;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+    }
+
+    location /bin {
+        fastcgi_pass  unix:/var/run/fcgiwrap.socket;
+        include /etc/nginx/fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME  $request_filename;
+    }
+
+    index index.html index.htm index.nginx-debian.html;
+    server_name _;
+}

@@ -1,0 +1,69 @@
+body {
+    margin: 40px;
+    background-blend-mode: darken;
+    background: linear-gradient(transparent, black), url(woods.jpg);
+    color: white;
+    background-attachment: fixed;
+}
+
+songs {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+}
+
+songs a {
+    font-size: 2.5em;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+text {
+    margin-top: 2em;
+    font-size: 4em;
+
+}
+
+youtube {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem;
+    margin-left: auto;
+    font-size: 2em;
+}
+
+input {
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+songs a:hover {
+    background-color: chocolate;
+}
+
+control {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5em;
+    padding: 0.7rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+control a {
+    border-radius: 3px;
+    text-align: center;
+    color: white;
+    padding: 0.5em 2em;
+    text-decoration: none;
+
+}
+
+control a:hover {
+    background-color: #555;
+    background-color: rgba(0, 0, 0, 0.5);
+}

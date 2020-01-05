@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Song Selector</title>
+  <link rel="stylesheet" href="static/stylesheet.css">
+  <script type="text/javascript" src="static/socket.js"></script>
+</head>
+<body>
+  <header>
+    <text>
+      Music Player!
+    </text>
+  </header>
+  <control>
+    <a href="/?cmd=play">Resume</a>
+    <a href="/?cmd=pause">Pause</a>
+  </control>
+  <songs>
+    {% for song in songs %}
+    <a href="/?song={{ song }}">{{ song }}</a>
+    {% endfor %}
+  </songs>
+  <youtube>Youtube Download:
+    <form onsubmit="addMessage(); return false;">
+      <input id="message"></form>
+  </youtube>
+</body>
+</html>
